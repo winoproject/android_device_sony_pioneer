@@ -72,19 +72,22 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # TWRP specific build flags
-RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXCLUDE_SUPERSU := true
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_SCREEN_BLANK_ON_BOOT := true
+TW_FORCE_USE_BUSYBOX := true
+TW_NO_BATT_PERCENT := false
+# Display
 TW_THEME := portrait_hdpi
-TW_USE_TOOLBOX := true
+TW_DEFAULT_BRIGHTNESS := 188
+TW_MAX_BRIGHTNESS := 1023
+TW_Y_OFFSET := 80
+TW_H_OFFSET := -80
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_NO_SCREEN_BLANK := true
+TW_NO_SCREEN_TIMEOUT := false
+PB_DISABLE_DEFAULT_DM_VERITY := true
+TW_OZIP_DECRYPT_KEY := "1c4c1ea3a12531ae491b21bb31613c11"
+TW_SKIP_COMPATIBILITY_CHECK := true
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
 
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := system/vendor
